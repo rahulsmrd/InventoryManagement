@@ -1,0 +1,15 @@
+{% extends 'mainApp/base.html' %}
+{% block title %} Add Supplier {% endblock %}
+{% block supplier_active %}active{% endblock %}
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center">Add Supplier</h1>
+    <div class="container mt-5 px-5">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-outline-success form-control">Add</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

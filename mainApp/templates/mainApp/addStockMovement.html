@@ -1,0 +1,16 @@
+{% extends 'mainApp/base.html' %}
+{% block title %}Manage Stock{% endblock %}
+{% block stock_active %}active{% endblock %}
+{% block body %}
+<div class="container my-5">
+    {% if errors %}
+    <p style="color: red;">{{errors}}</p>
+    {% endif %}
+    <h1 class="text-center mb-5">Manage Stock</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-outline-success form-control">Save</button>
+    </form>
+</div>
+{% endblock %}

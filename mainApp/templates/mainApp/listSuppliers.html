@@ -1,0 +1,29 @@
+{% extends 'mainApp/base.html' %}
+{% block title %}Suppliers List{% endblock %}
+{% block body %}
+<div class="container my-5">
+    <h1 class="text-center mb-5">List of all Suppliers</h1>
+    <table class="table table-striped table-hover text-center">
+        <thead>
+            <tr>
+                <th>S No.</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for supplier in suppliers %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ supplier.name }}</td>
+            <td>{{ supplier.email }}</td>
+            <td>{{ supplier.phone }}</td>
+            <td>{{ supplier.address }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

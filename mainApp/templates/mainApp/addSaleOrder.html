@@ -1,0 +1,16 @@
+{% extends 'mainApp/base.html' %}
+{% block title %}Create Sale Order{% endblock %}
+{% block order_active %}active{% endblock %}
+{% block body %}
+<div class="container my-5">
+    {% if errors %}
+    <p style="color: red;">{{errors}}</p>
+    {% endif %}
+    <h1 class="text-center mb-5">Add Sale Order</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-outline-success form-control">Create</button>
+    </form>
+</div>
+{% endblock %}
