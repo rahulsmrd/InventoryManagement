@@ -9,6 +9,7 @@ from mainApp.views import (
     updateSaleOrderView,
     listSaleOrderView,
     addStockMovementView,
+    listStockMovement,
     check_stock 
 )
 
@@ -22,5 +23,6 @@ urlpatterns =[
     path('update/sale-order/<int:pk>/', updateSaleOrderView, name='update_sale_order'),
     path('list/sale-orders/', listSaleOrderView.as_view(), name='list_sale_orders'),
     path('add/stock-movement/', addStockMovementView.as_view(), name='add_stock_movement'),
+    path('list/stock-movement/', listStockMovement.as_view(), name='list_stock_movement'),
     path('check/stock/', check_stock, name='check_stocks'),
 ]

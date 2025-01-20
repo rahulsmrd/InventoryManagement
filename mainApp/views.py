@@ -94,6 +94,11 @@ class addStockMovementView(CreateView):
         stock_movement.save()
         return super().form_valid(form)
     
+class listStockMovement(ListView):
+    model = StockMovement
+    template_name = 'mainApp/listStockMovement.html'
+    context_object_name ='stock_movements'
+    
 def check_stock(request):
     all_products = Product.objects.all()
     pro = {}
